@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'antlr'
     id 'idea'
+    id 'eclipse'
 }
 
 group 'com.flipper'
@@ -22,7 +23,7 @@ generateGrammarSource {
     maxHeapSize = "128m"
     arguments += ['-package', 'com.flipper.poseidonparser.PoseidonParser', "-visitor", "-no-listener"]
 }
-compileJava.dependsOn generateGrammarSource;
+compileJava.dependsOn generateGrammarSource
 
 
 sourceSets {
